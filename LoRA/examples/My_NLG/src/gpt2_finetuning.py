@@ -271,6 +271,7 @@ if __name__ == '__main__':
     lm_net = lm_net.cuda()
 
     if args.lora_dim > 0:
+        print('checking model trainable parameters')
         lora.mark_only_lora_as_trainable(lm_net)
     optimizer = create_adam_optimizer_from_args(lm_net, args)
 
